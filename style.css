@@ -1,0 +1,226 @@
+/* ===================================================
+   1. DEFINICIÓN DE PALETA HSL CON VARIABLES CSS (:root)
+   =================================================== */
+:root {
+    /* Paleta de colores HSL */
+    --clr-principal: 160, 16%, 64%;  /* #92B2A7 (Verde Grisáceo) - Acento Primario */
+    --clr-secundario: 214, 13%, 49%; /* #6E7B8C (Azul Grisáceo) - Texto / Fondo Oscuro */
+    --clr-acento-a: 349, 18%, 64%;   /* #B69198 (Lavanda Rosa) - Links / Interacción */
+    --clr-acento-b: 12, 68%, 77%;    /* #EFAA9B (Salmón) - Fondos claros */
+    --clr-fondo-claro: 28, 53%, 79%; /* #E7C7B0 (Beige Claro) - Fondo de Página */
+
+    /* Colores funcionales del tema (usando HSL con las variables de arriba) */
+    /* NOTA: Estas variables YA contienen H, S y L, y solo deben usarse dentro de hsl() */
+    --color-texto: hsl(var(--clr-secundario)); /* Error: Solo debe contener la HSL */
+    --color-texto-claro: hsl(0, 0%, 100%); 
+    --color-fondo-pagina: hsl(var(--clr-fondo-claro));
+    --color-enlace: hsl(var(--clr-acento-a));
+    --color-resaltado: hsl(var(--clr-principal));
+
+    /* Color de WhatsApp (H:139, S:44%, L:55%) */
+    --color-whatsapp: 139, 44%, 55%; 
+}
+
+/* ===================================================
+   2. ESTILOS GENERALES
+   =================================================== */
+* { box-sizing: border-box; }
+
+body {
+    /* Usando HSL variable para el fondo de la página */
+    background-color: var(--color-fondo-pagina); 
+    margin: 16px;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--color-texto); /* Color secundario para texto general */
+}
+
+/* keyword */
+h1 {
+    /* Acento A para títulos */
+    color: var(--color-enlace); 
+    border-bottom: 4px solid currentColor; 
+}
+
+h2 { 
+    /* Color secundario para subtítulos */
+    color: var(--color-texto); 
+}
+
+h3 { 
+    /* Color secundario más oscuro */
+    color: hsl(214, 13%, 30%); 
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    /* Color secundario para párrafos */
+    color: var(--color-texto); 
+}
+
+/* --- Estilos para la lista de características en Cards (texto-danger) --- */
+.lista-caracteristicas li { 
+    /* Acento A para ítems de lista de características (reemplaza el rojo) */
+    color: var(--color-enlace); 
+    list-style-type: '🍰'; /* Pequeño detalle de repostería */
+    padding-left: 5px;
+}
+.lista-caracteristicas {
+    list-style: none; /* Quita el estilo de lista por defecto */
+    padding-left: 0;
+}
+
+/* Estilos de tabla antiguos que usan HSL directo (reemplazados por variables) */
+li { 
+    /* El selector li { ... } es demasiado amplio, mejor usar una clase si es para lista fuera de cards */
+    color: var(--color-texto); /* Color secundario por defecto si no tienen clase */
+} 
+/* Nota: Se han eliminado los selectores `th` y `td` genéricos para usar las clases de Bootstrap sobreescritas. */
+
+
+/* --- Enlaces y Botones --- */
+a {
+    /* Color de enlace (Acento A) */
+    color: var(--color-enlace);
+    border-bottom: 2px solid currentColor;
+    text-decoration: none;
+}
+a:hover { 
+    /* Un tono más oscuro del acento para el hover */
+    color: hsl(349, 25%, 50%); 
+}
+
+/* Botón personalizado que reemplaza al btn-outline-danger del navbar */
+.btn-custom-acento {
+    /* Fondo transparente, borde y texto con Acento A. CORRECCIÓN: Uso directo de hsl() con la variable de tres valores */
+    color: hsl(var(--clr-acento-a));
+    border-color: hsl(var(--clr-acento-a));
+    background-color: transparent;
+}
+.btn-custom-acento:hover {
+    color: var(--color-texto-claro);
+    background-color: hsl(var(--clr-acento-a));
+    border-color: hsl(var(--clr-acento-a));
+}
+
+/* Botón colapsable (reemplaza btn-outline-info) */
+.btn-custom-outline-info {
+    color: hsl(var(--clr-principal));
+    border-color: hsl(var(--clr-principal));
+    background-color: transparent;
+}
+.btn-custom-outline-info:hover {
+    color: var(--color-texto-claro);
+    background-color: hsl(var(--clr-principal));
+    border-color: hsl(var(--clr-principal));
+}
+
+
+/* ===================================================
+   3. ESTILOS DE COMPONENTES DE BOOTSTRAP
+   =================================================== */
+
+/* --- Footer (Anulación de bg-dark) --- */
+footer.bg-dark {
+    /* Fondo con el color secundario y texto blanco */
+    background-color: hsl(var(--clr-secundario)) !important; 
+    color: var(--color-texto-claro) !important;
+}
+
+/* --- Tabla de Inventario (Anulación de table-dark) --- */
+.table-custom-dark {
+    /* Fondo oscuro (Secundario) para el thead */
+    --bs-table-bg: hsl(var(--clr-secundario));
+    --bs-table-color: var(--color-texto-claro);
+    color: var(--bs-table-color);
+    background-color: var(--bs-table-bg);
+}
+
+/* --- Banner Promocional (Anulación de bg-dark) --- */
+.banner-promo {
+    background-color: hsl(var(--clr-acento-b)); /* Salmón */
+    color: var(--color-texto); /* Texto con el secundario */
+}
+.banner-promo h2 {
+    color: hsl(var(--clr-secundario));
+}
+
+/* --- Nav Pills (Pestañas del Formulario) --- */
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    /* Color de fondo activo con el Acento A */
+    background-color: hsl(var(--clr-acento-a));
+    color: var(--color-texto-claro);
+}
+.nav-pills .nav-link {
+    /* Color de texto no activo con el Acento A */
+    color: hsl(var(--clr-acento-a));
+}
+
+
+/* --- Testimonios --- */
+.testimonio {
+    background-color: hsl(var(--clr-fondo-claro)); /* Fondo Beige Claro */
+    border-color: hsl(var(--clr-principal)) !important; /* Borde con el Acento Principal */
+}
+.testimonio-vip {
+    /* Destacado VIP con el Acento B */
+    background-color: hsl(var(--clr-acento-b)); 
+    border-color: hsl(var(--clr-acento-a)) !important;
+}
+
+
+/* ===================================================
+   4. ESTILOS DE BOTÓN FLOTANTE
+   =================================================== */
+
+/* --- Botón flotante WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px; 
+    right: 20px; 
+    /* HSL variable de WhatsApp */
+    background-color: hsl(var(--color-whatsapp)); 
+    color: var(--color-texto-claro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px; 
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.25);
+    z-index: 1055; 
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+
+    /* ESTADO INICIAL: ELIMINAMOS LAS LÍNEAS 'opacity: 0;' Y 'visibility: hidden;'
+       PARA QUE EL BOTÓN SEA VISIBLE AL CARGAR LA PÁGINA. */
+    /* Si deseas que se oculte al cargar y aparezca con scroll (requiere JS), 
+       descomenta las siguientes 4 líneas. */
+    /*
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    pointer-events: none;
+    */
+}
+
+/* Hover/focus: efecto de ampliación */
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+    /* CORRECCIÓN: No se puede mezclar var() de 3 valores con un solo valor de L. 
+       Se utiliza directamente H y S de la variable y se fuerza el nuevo L (40% para un tono más oscuro) */
+    background-color: hsl(139, 44%, 40%); 
+    transform: scale(1.08);
+    outline: none;
+}
+
+/* Evitamos que el botón tape el footer en pantallas pequeñas */
+@media (max-width: 575.98px) {
+    footer { padding-bottom: 84px; }
+}
+
+/* Accesibilidad: menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float { transition: none; }
+}

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kehilicious</title>
+    <meta name="description" content="Página de ropa deportiva.">
+    <meta name="keywords" content="Panque, Panadería, Reposteria, Pasteles, Dulces">
+    <meta name="author" content="Kehilicious">
+    <meta name="copyright" content="2025 Panques Kehilicious.mx">
+    <meta name="application-name" content="Kehilicious.mx">
+    <meta name="generator" content="VSCode">
+    
+    <link 
+    href= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    referrerpolicy="no-referrrer"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/Logo sin fondo.jpg" alt="Kehilicious" height="28" class="align-text-top me-2"> 
+                <span class="fw-semibold">Kehilicious</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tablaProductos">Inventario</a></li>
+                </ul>
+
+                <button class="btn btn-custom-acento btn-sm" data-bs-toggle="modal" data-bs-target="#modalAviso">
+                    Aviso
+                </button>
+            </div>
+        </div>
+    </nav>
+    <header>
+        <h1>Kehilicious</h1>  
+        <p> New flavor</p>
+    </header>
+
+    <section class="container my-3">
+        <div id="banner" class="p-4 rounded banner-promo">
+            <h2 class="h4 mb-2">Promo de la semana</h2>
+            <p class="mb-0">Envio gratis en compras mayores a $699</p>
+        </div>
+        <button id="btnPromo" class="btn btn-warning btn-sm mt-2">
+            Actualizar promoción
+        </button>
+    </section>
+
+    <div class="container mt-3">
+        <div class="alert alert-info" role="alert">
+            Aquí tienes información adicional (ejemplo de <strong>alert</strong>).
+        </div>
+    </div>
+
+    <main class="container my-4">
+
+        <div id="heroCarousel" class="carousel slide mb-4" data-bs-ride="carousel" aria-label="Promociones destacadas">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner rounded-3 shadow-sm">
+                <div class="carousel-item active">
+                    <img src="img/Panque.jpg" class="d-block w-100" alt="Playeras oficiales en promoción"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <h5>Disponible con nuez o chispas</h5>
+                        <p>Opcional sin gluten</p>
+                        <a href="#catalogo" class="btn btn-primary btn-sm">Ver catálogo</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/manzana.jpg" class="d-block w-100" alt="Accesorios deportivos"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Ingredientes extra</h5>
+                        <p>limón, nuez, naranja</p>
+                        <a href="#tablaProductos" class="btn btn-light btn-sm">Inventario</a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="img/Individual.jpg" class="d-block w-100" alt="Ofertas especiales"
+                        style="height:380px; object-fit:cover;">
+                    <div class="carousel-caption d-none d-md-block text-end">
+                        <h5>Disponible en más presentaciones</h5>
+                        <p>presentación indvidual</p>
+                        <button class="btn btn-success btn-sm" data-bs-
+                        toggle="modal" data-bs-target="#modalCupon">
+                            Más opciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Anterior">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Siguiente">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="row g-4">
+            <div class="col-12" id="catalogo"> <div class="card shadow-sm mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="img/Panque.jpg" alt="Panque de plátano" width="300" class="img-fluid rounded-start"><br>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-tittle h4 mb-2">Panque de platano</h2>
+                                <p class="card-text mb-1">Panque de platano con nuez</p>
+                                <p class="card-text fs-5 fw-semibold text-success">$450</p>
+                                <h3 class="h5">Características:</h3>
+                                <ul class="mb-0 lista-caracteristicas">
+                                    <li>Nuez y chispas</li>
+                                    <li>Azúcar morena</li>
+                                    <li>Harina artesanal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="img/manzana.jpg" alt="Keyrings rosa" width="300" class="img-fluid rounded-start"><br>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-tittle h4 mb-2">Panque de Manzana</h2>
+                                <p class="card-text mb-1">Con trozos de manzana</p>
+                                <p class="card-text fs-5 fw-semibold text-success">$450</p>
+                                <h3 class="h5">Características:</h3>
+                                <ul class="mb-0 lista-caracteristicas">
+                                    <li>Rodajas de manzana</li>
+                                    <li>Harina artesanal</li>
+                                    <li>Manzana fresca</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="img/Individual.jpg" alt="Panque Individual" width="300" class="img-fluid rounded-start"><br>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-tittle h4 mb-2">Individuales</h2>
+                                <p class="card-text mb-1">Presentaciones individuales</p>
+                                <p class="card-text fs-5 fw-semibold text-success">$40</p>
+                                <h3 class="h5">Características:</h3>
+                                <ul class="mb-0 lista-caracteristicas">
+                                    <li>Variación de sabores</li>
+                                    <li>Indivudial, grande</li>
+                                    <li>Extras de topping</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="img/cozyjacket.jpg" alt="Cozy Jacket" width="300" class="img-fluid rounded-start"><br>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2 class="card-tittle h4 mb-2">Brownie</h2>
+                                <p class="card-text mb-1">Brownie de chocolate húmedo.</p>
+                                <p class="card-text fs-5 fw-semibold text-success">$350.00</p>
+                                <h3 class="h5">Características:</h3>
+                                <ul class="mb-0 lista-caracteristicas">
+                                    <li>Crujiente</li>
+                                    <li>Chocolate premium</li>
+                                    <li>Húmedo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-12" id="tablaProductos">
+                <h3 class="mt-5">Tabla de productos en bodega:</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                        <thead class="table-custom-dark">
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Panque de plátano completo</td>
+                                <td>$450.00</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Panque de Manzana completo</td>
+                                <td>$450.00</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <td>Panque de Zanahoria completo</td>
+                                <td>$450.00</td>
+                                <td>7</td>
+                            </tr>
+                            <tr>
+                                <td>Brownie</td>
+                                <td>$350.00</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Brownie Indivudial</td>
+                                <td>$40.00</td>
+                                <td>8</td>
+                            </tr>
+                            <tr>
+                                <td>Plátano Indivudial</td>
+                                <td>$50.00</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>Zanahoria individual</td>
+                                <td>$50.00</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Manzana individual</td>
+                                <td>$50.00</td>
+                                <td>10</td>
+                            </tr>
+                        </tbody>
+                        <tfoot class="table-light fw-bold">
+                            <tr>
+                                <td colspan="2">Total</td>
+                                <td>104</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            </div>
+
+        <section class="my-5">
+            <h3 class="h5 mb-3">Más información</h3>
+            <p>
+                <button class="btn btn-custom-outline-info" type="button" data-bs-toggle="collapse" data-bs-target="#infoExtra" aria-expanded="false" aria-controls="infoExtra">
+                    Mostrar más detalles
+                </button>
+            </p>
+            <div class="collapse" id="infoExtra">
+                <div class="card card-body">
+                    Este es solo un ejemplo de contenido colapsable. Aquí puedes poner información adicional que quieras mostrar u ocultar. <strong>Colapsable</strong>.
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <h3 class="h5 mb-3">Preguntas frecuentes</h3>
+            <div class="accordion" id="miAcordeon">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="encabezadoUno">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelUno" aria-expanded="true" aria-controls="panelUno">
+                            ¿Cuánto tarda el envío?
+                        </button>
+                    </h2>
+                    <div id="panelUno" class="accordion-collapse collapse show" aria-labelledby="encabezadoUno" data-bs-parent="#miAcordeon">
+                        <div class="accordion-body">
+                            Los envíos tardan entre 30mn a 1 hr, dependiendo de tu ubicación.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="encabezadoDos">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelDos" aria-expanded="false" aria-controls="panelDos">
+                            Si no me gusta ¿puedo devolver o cambiar el producto?
+                        </button>
+                    </h2>
+                    <div id="panelDos" class="accordion-collapse collapse" aria-labelledby="encabezadoDos" data-bs-parent="#miAcordeon">
+                        <div class="accordion-body">
+                            Dependiendo si el producto está en buen estado, puedes devolverlo o cambiarlo dentro de las primeras 24 horas.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="encabezadoTres">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelTres" aria-expanded="false" aria-controls="panelTres">
+                            ¿Cuáles son los métodos de pago aceptados?
+                        </button>
+                    </h2>
+                    <div id="panelTres" class="accordion-collapse collapse" aria-labelledby="encabezadoTres" data-bs-parent="#miAcordeon">
+                        <div class="accordion-body">
+                            Aceptamos tarjetas de crédito, débito y vales.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pedido" class="my-5">
+            <h3 class="h5 mb-3">Hacer pedido</h3>
+
+            <ul class="nav nav-pills custom-pills mb-3" id="pillsPedido" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-producto-tab" data-bs-toggle="pill" data-bs-target="#pills-producto" type="button" role="tab" aria-controls="pills-producto" aria-selected="true">
+                        1) Producto
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-personaliza-tab" data-bs-toggle="pill" data-bs-target="#pills-personaliza" type="button" role="tab" aria-controls="pills-personaliza" aria-selected="false">
+                        2) Personaliza
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-notas-tab" data-bs-toggle="pill" data-bs-target="#pills-notas" type="button" role="tab" aria-controls="pills-notas" aria-selected="false">
+                        3) Envío/Notas
+                    </button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="pillsPedidoContent">
+
+                <div class="tab-pane fade show active" id="pills-producto" role="tabpanel" aria-labelledby="pills-producto-tab" tabindex="0">
+                    <form aria-label="Formulario de pedido (sin lógica por ahora)">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="selModelo" class="form-label">Sabor</label>
+                                <select id="selModelo" class="form-select">
+                                    <option value="" selected disabled>Elige un Sabor</option>
+                                    <option>Plátano</option>
+                                    <option>Manzana</option>
+                                    <option>Zanahoria</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="selColor" class="form-label">Topping</label>
+                                <select id="selColor" class="form-select">
+                                    <option value="" selected disabled>Elige</option>
+                                    <option>Nuez</option>
+                                    <option>Chispas</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="inpCantidad" class="form-label">Cantidad</label>
+                                <input id="inpCantidad" type="number" min="1" value="1" class="form-control">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="nombreCliente" class="form-label">Tu nombre</label>
+                                <input type="text" id="nombreCliente" class="form-control" placeholder="Escribe tu nombre">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="tab-pane fade" id="pills-personaliza" role="tabpanel" aria-labelledby="pills-personaliza-tab" tabindex="0">
+                    <p class="mb-2">Opciones de personalización (maqueta):</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="chkNombreNumero">
+                                <label class="form-check-label" for="chkNombreNumero">Nombre y número</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="chkParcheLiga">
+                                <label class="form-check-label" for="chkParcheLiga">Parche de liga</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pills-notas" role="tabpanel" aria-labelledby="pills-notas-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="txtNotas" class="form-label">Notas o instrucciones</label>
+                        <textarea id="txtNotas" class="form-control" rows="3" placeholder="Dirección, detalles de envío..."></textarea>
+                    </div>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAviso">
+                        Enviar pedido
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+    <section id="contacto" class="container my-5">
+        <h3 class="h5 mb-3">Contacto</h3>
+        <form id="formContacto" class="row g-3" 
+        aria-label="Formulario de contacto">
+        <div class="col-md-6">
+                <label for="cNombre" class="form-label">
+                Nombre </label>
+                <input type="text" id="cNombre" name="nombre"
+                class="form-control" placeholder="Tu nombre">
+            </div>
+
+            <div class="col-md-6">
+                <label for="cEmail" class="form-label">
+                    Email</label>
+                    <input type="email" id="cEmail" class="form-control"
+                    placeholder="tucorreo@ejemplo.com">
+            </div>
+
+                <div class="col-12">
+                <label for="cMsg" class="form-label">
+                    Mensaje</label>
+                    <input type="cMsg" class="form-control" rows="3"
+                    placeholder="¿En qué te podemos ayudar?">
+            </div>
+
+                <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    Enviar</button>
+                    <button type="reset" class="btn btn-outline-secondary">
+                    Limpiar</button>
+            </div>
+            </form>
+        </section>
+
+    <div class="modal fade" id="modalAviso" tabindex="-1" aria-labelledby="modalAvisoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalAvisoLabel">Aviso importante</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    Envíos gratis a todo Toluca en compras mayores a $700. 🎉
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#catalogo" class="btn btn-primary btn-sm">Ver productos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCupon" tabindex="-1" aria-labelledby="modalCuponLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalCuponLabel">Cupón de bienvenida</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    Usa el código <strong>Kehilicious28</strong> y obtén 10% de descuento en tu primera compra.
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-success btn-sm" data-bs-dismiss="modal">¡Listo!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalles" tabindex="-1" aria-labelledby="modalDetallesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalDetallesLabel">Detalles del producto</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-5">
+                            <img src="img/Panque.jpg" alt="Panque de plátano" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="mb-2">Panque de plátano gluten free</p>
+                            <ul class="mb-3">
+                                <li>Gluten free</li>
+                                <li>Plátano fresco</li>
+                                <li>Nuez</li>
+                                <li>Chsipas</li>
+                            </ul>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="fs-5 fw-bold text-success">$2,299</span>
+                                <a href="https://www.inter.it/en/store/mens-home-shirt-2023-24" target="_blank" rel="noopener"
+                                    class="btn btn-primary btn-sm">Comprar ahora</a>
+                                <button class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="small text-muted mb-0">* Imágenes de referencia. Precio sujeto a cambios sin previo aviso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="testimonios" class="continer my-5">
+        <h3 class="h5 mb-3">Testimonios</h3>
+        
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="p-3 border rounded testimonio testimonio-vip">
+                    <h4 class="h6 mb-1">Diego (VIP)</h4>
+                    <p class="mb-0">Me encanta la presentación</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 border rounded testimonio">
+                    <h4 class="h6 mb-1">Karmina</h4>
+                    <p class="mb-0">El sabor es delicioso</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="p-3 border rounded testimonio testimonio-vip">
+                    <h4 class="h6 mb-1">Daniel (VIP)</h4>
+                    <p class="mb-0">Me súper fascino la atención y calidad 
+                    de los productos
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    <a
+    href="https://wa.me/527221234567" 
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <footer class="bg-dark text-center text-white py-3 mt-5">
+    © 2025 Kehilicious  | Más contenido en Kehilicious
+    <div class="mt-2">
+        <a href="https://www.facebook.com/tuusuario" target="_blank" rel="noopener"
+            class="text-white me-3" aria-label="Facebook">
+            <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener"
+            class="text-white me-3" aria-label="Instagram">
+            <i class="fab fa-instagram fa-lg" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener"
+            class="text-white me-3" aria-label="TikTok">
+            <i class="fab fa-tiktok fa-lg" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.youtube.com/c/tuusuario" target="_blank" rel="noopener"
+            class="text-white me-3" aria-label="YouTube">
+            <i class="fab fa-youtube fa-lg" aria-hidden="true"></i>
+        </a>
+        <a href="https://x.com/tuusuario" target="_blank" rel="noopener"
+            class="text-white" aria-label="X">
+            <i class="fab fa-x-twitter fa-lg" aria-hidden="true"></i>
+        </a>
+    </div>
+    </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+         
+        <script src="app.js"></script>
+    
+</body>
+</html>
+  
+
